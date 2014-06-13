@@ -4,11 +4,11 @@ PATH := ./pythonenv/bin:$(PATH)
 default: dependencies check test
 
 check:
-	-find rewards -name '*.py' | xargs pep8
-	-pylint rewards
+	-find affiliate -name '*.py' | xargs pep8
+	-pylint affiliate
 
 test:
-	python manage.py test --verbosity=1 rewards
+	python manage.py test --verbosity=1 affiliate
 
 dependencies:
 	virtualenv pythonenv

@@ -2,8 +2,8 @@
 
 """Copyright (c) 2010  Maximillian Dornseif. All rights reserved."""
 
-from rewards.models import Campaign, Inflow, Conversion, CONVERSION_STATUS_CHOICES
-from rewards.tools import get_ip
+from affiliate.models import Campaign, Inflow, Conversion, CONVERSION_STATUS_CHOICES
+from affiliate.tools import get_ip
 
 
 def regcon(campaign_designator, value, reference='', text='', ip_address='', user_agent='', referer=''):

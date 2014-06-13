@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # encoding: utf-8
-"""django-rewards is an affiliate marketing tool.
+"""django-affiliate is an affiliate marketing tool.
 """
 
 # setup.py
@@ -9,7 +9,7 @@
 
 from setuptools import setup, find_packages
 
-setup(name='django-rewards',
+setup(name='django-affiliate',
       maintainer='Maximillian Dornseif',
       # maintainer_email='xXXXx@hudora.de',
       version='1.0',
@@ -17,7 +17,7 @@ setup(name='django-rewards',
       classifiers=['License :: OSI Approved :: AGPL3 License',
                    'Intended Audience :: Developers',
                    'Programming Language :: Python'],
-      package_data={"django-rewards": ["templates/django-rewards/*.html", "reports/*.jrxml", "bin/*"]},
+      package_data={"django-affiliate": ["templates/django-affiliate/*.html", "reports/*.jrxml", "bin/*"]},
       packages=find_packages(),
       include_package_data=True,
       install_requires=['huTools', 'huDjango'],

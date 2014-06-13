@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Models for django-rewards.
+Models for django-affiliate.
 
 Created by Maximillian Dornseif on 2010-01-26.
 Copyright (c) 2010  Maximillian Dornseif. All rights reserved.
@@ -11,7 +11,7 @@ import hashlib
 import random
 import time
 from django.db import models
-from rewards.tools import get_ip
+from affiliate.tools import get_ip
 
 
 CONVERSION_STATUS_CHOICES = (('created', 'created'), ('processed', 'processed'),

@@ -12,9 +12,9 @@ from django.http import HttpRequest
 from django.middleware.common import CommonMiddleware
 from django.contrib.sessions.middleware import SessionMiddleware
 from django.conf import settings
-from rewards.middleware import RewardsMiddleware
+from affiliate.middleware import AffiliateMiddleware
 
-class RewardsMiddlewareTest(TestCase):
+class AffiliateMiddlewareTest(TestCase):
     def setUp(self):
         pass
 
@@ -37,14 +37,14 @@ class RewardsMiddlewareTest(TestCase):
         """Tests that sessions middlewares existence are enforced."""
         request = self._get_request('foo')
         del(request.session) # act as no session middleware would be loaded
-        self.assertRaises(RuntimeError, RewardsMiddleware().process_request, request)
+        self.assertRaises(RuntimeError, AffiliateMiddleware().process_request, request)
 
     def test_no_campaign_registered(self):
         """
         Tests that no Campagin gets written into the session if there is no ?aff= parameter.
         """
         request = self._get_request('foo')
-        RewardsMiddleware().process_request(request)
+        AffiliateMiddleware().process_request(request)
         self.assertEquals(request.session.get('campaign', None), None)
 
     def test_invalid_parameter(self):
@@ -52,7 +52,7 @@ class RewardsMiddlewareTest(TestCase):
         Tests that no Campagin gets written into the session if there is an invalid ?aff= parameter.
         """
         request = self._get_request('foo', 'aff=GIBBETNICH')
-        RewardsMiddleware().process_request(request)
+        AffiliateMiddleware().process_request(request)
         self.assertEquals(request.session.get('campaign', None), None)
 
     def test_campain_with_valid_parameter(self):
@@ -60,7 +60,7 @@ class RewardsMiddlewareTest(TestCase):
         Tests that Campagin gets written into the session.
         """
         request = self._get_request('foo', 'aff=dcTESTESTESTESTESTESTESTESTE')
-        RewardsMiddleware().process_request(request)
+        AffiliateMiddleware().process_request(request)
         self.assertEquals(request.session.get('campaign', None), None)
 
     def test_post_ignored(self):
@@ -69,5 +69,5 @@ class RewardsMiddlewareTest(TestCase):
         """
         request = self._get_request('foo', 'aff=dcTESTESTESTESTESTESTESTESTE')
         request.method = 'POST'
-        RewardsMiddleware().process_request(request)
+        AffiliateMiddleware().process_request(request)
         self.assertEquals(request.session.get('campaign', None), None)

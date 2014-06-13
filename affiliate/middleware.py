@@ -7,15 +7,15 @@ created by Maximillian Dornseif on 2009-02-07.
 Copyright (c) 2009, 2010 HUDORA. All rights reserved.
 """
 
-from rewards.models import Campaign, Inflow
-from rewards.tools import get_ip
+from affiliate.models import Campaign, Inflow
+from affiliate.tools import get_ip
 
-class RewardsMiddleware(object):
+class AffiliateMiddleware(object):
     
     def process_request(self, request):
         if not hasattr(request, 'session'):
             raise RuntimeError('No session information! Do you use SessionMiddleware'
-                               ' and have it loaded before RewardsMiddleware?')
+                               ' and have it loaded before AffiliateMiddleware?')
 
         # don't process AJAX requests
         if request.is_ajax():

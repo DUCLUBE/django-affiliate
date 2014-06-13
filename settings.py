@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Settings for testing django-rewards.
+Settings for testing django-affiliate.
 
 Copyright (c) 2010 Maximillian Dornseif. All rights reserved.
 """
@@ -42,7 +42,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'rewards.middleware.RewardsMiddleware',
+    'affiliate.middleware.AffiliateMiddleware',
 )
 
 ROOT_URLCONF = 'urls'
@@ -58,5 +58,5 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.admin',
-    'rewards',
+    'affiliate',
 )

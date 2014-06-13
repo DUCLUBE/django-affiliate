@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # encoding: utf-8
 """
-rewards/tools.py
+affiliate/tools.py
 
 Created by Maximillian Dornseif on 2010-01-27.
 Copyright (c) 2010 Maximillian Dornseif. All rights reserved.

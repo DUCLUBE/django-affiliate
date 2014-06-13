@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Admin configuration for for django-rewards.
+Admin configuration for for django-affiliate.
 
 Created by Maximillian Dornseif on 2010-01-26.
 Copyright (c) 2010  Maximillian Dornseif. All rights reserved.
@@ -9,7 +9,7 @@ Copyright (c) 2010  Maximillian Dornseif. All rights reserved.
 ### SAMPLE CODE FOLLOWS
 
 from django.contrib import admin
-from rewards.models import Campaign, Inflow
+from affiliate.models import Campaign, Inflow
 
 class CampaignAdmin(admin.ModelAdmin):
     """Configuration of the Django Admin Interface."""
